@@ -10,6 +10,7 @@ permissions:
 jobs: 
   Authentication:
     runs-on: ubuntu-latest
+    environment: production
     steps:
     - name: Azure Login
       uses: azure/login@v2
