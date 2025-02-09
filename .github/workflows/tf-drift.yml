@@ -2,8 +2,6 @@ name: 'Terraform Configuration Drift Detection'
 
 on:
   workflow_dispatch: 
-  schedule:
-    - cron: '41 3 * * *' # runs nightly at 3:41 am
 
 #Special permissions required for OIDC authentication
 permissions:
@@ -14,7 +12,7 @@ permissions:
 #These environment variables are used by the terraform azure provider to setup OIDD authenticate. 
 env:
   ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
-  ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+  ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION01_ID }}"
   ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
 
 jobs:
@@ -135,7 +133,7 @@ jobs:
                 repo: context.repo.repo,
                 title: title,
                 body: body
-             })
+            })
             }
             
     # If changes aren't detected, close any open drift issues
@@ -167,7 +165,7 @@ jobs:
                 state: 'closed'
               })
             } 
-             
+            
     # Mark the workflow as failed if drift detected 
     - name: Error on Failure
       if: steps.tf-plan.outputs.exitcode == 2
