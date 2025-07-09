@@ -1,1 +1,15 @@
+# Local .terraform directories (plugin & state cache)
+.terraform/
 
+# Terraform state files (can contain secrets)
+*.tfstate
+*.tfstate.*
+
+# Crash log (useful locally, not in repo)
+crash.log
+
+# Override files (user-specific)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
