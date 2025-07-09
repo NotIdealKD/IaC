@@ -19,3 +19,6 @@ provider "azurerm" {
   use_oidc = true
 }
 
+resource "azurerm_resource_group" "prod-vm-rsg01" {
+  name = var.resource_group_name
+}
