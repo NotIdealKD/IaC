@@ -10,3 +10,4 @@ variable "address_space" {
 }
 variable "vmsubnet_01" {}
 variable "vnet_name" {}
+variable "vmsubnet_name" {}
