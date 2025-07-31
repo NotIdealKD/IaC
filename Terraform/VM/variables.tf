@@ -1,6 +1,5 @@
-#Global vars
+#Location 
 variable "location" {}
-variable "subscription_id" {}
 #Resource group vars
 variable "resource_group_name" {}
 #VNET vars

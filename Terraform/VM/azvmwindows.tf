@@ -1,25 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-        source = "hashicorp/azurerm"
-        version = ">= 3.7.0"
-    }
-  }
-    # State file configuration
-  backend "azurerm" {
-    resource_group_name  = "terraform-core"
-    storage_account_name = "ntiterraformsa"
-    container_name       = "tfstate"
-    key                  = "azvmwindows.tfstate"
-    use_oidc             = true
-  }
-}
-provider "azurerm" {
-  features {}
-  subscription_id = var.subscription_id
-  use_oidc = true
-}
-
 resource "azurerm_resource_group" "prod_vm_rsg01" {
   name = var.resource_group_name
   location = var.location
@@ -43,4 +21,9 @@ resource "azurerm_network_security_group" "vmsubnet_01_NSG" {
   resource_group_name = azurerm_resource_group.prod_vm_rsg01.name
   name = var.vmsubnet_01_name
   location = var.location
+}
+
+resource "azurerm_subnet_network_security_group_association" "example" {
+  subnet_id                 = azurerm_subnet.vmsubnet_01.id
+  network_security_group_id = azurerm_network_security_group.vmsubnet_01_NSG.id
 }
