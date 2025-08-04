@@ -1,3 +1,10 @@
-module "rresouce_group" {
-  source = "./modules/resourceGroup/rg"
+module "rg" {
+  source = "./modules/resourceGroup"
+  resource_group_name = var.resource_group_name
+  location = var.location
 }
+
+#
+#module "vnet" {
+#  source = "./modules/vnet"
+#}
