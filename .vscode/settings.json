@@ -1,0 +1,8 @@
+{
+    "[html]": {
+        "editor.tabSize": 4
+    },
+    "[terraform]": {
+        "editor.tabSize": 2
+    }
+}
