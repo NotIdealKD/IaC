@@ -8,6 +8,3 @@ variable "address_space" {
 variable "vmsubnet_01" {}
 variable "vnet_name" {}
 variable "vmsubnet_name" {}
-
-#NSG vars
-variable "vmsubnet_01_name" {}
