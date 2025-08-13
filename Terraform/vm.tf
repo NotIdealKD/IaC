@@ -13,4 +13,5 @@ module "vnet" {
   vmsubnet_name = var.vmsubnet_name
   vmsubnet_01 = var.vmsubnet_01
   vmsubnet_01_name = var.vmsubnet_01_name
+  
 }
