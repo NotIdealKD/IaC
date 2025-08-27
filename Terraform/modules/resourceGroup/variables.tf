@@ -1,6 +1,5 @@
 #Location 
-variable "location" {
-  default = uk_south
-}
+variable "location" {}
+
 #Resource group vars
 variable "resource_group_name" {}
