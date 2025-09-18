@@ -11,7 +11,7 @@ variable "address_space" {
   description = "Address space for the VNET"
 }
 variable "vmsubnet_01" {}
-variable "vmvnet_name" {}
+variable "vnet_name" {}
 variable "vmsubnet_name" {}
 
 #NSG vars
