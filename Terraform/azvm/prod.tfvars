@@ -11,3 +11,4 @@ vnet_name = "prod-vm-vnet-01"
 vmsubnet_01 = ["10.10.0.0/24"]
 vmsubnet_name = "VM_Subnet01"
 vmsubnet_01_name = "VMsubnet_01_NSG"
+
