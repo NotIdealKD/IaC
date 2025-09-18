@@ -8,5 +8,4 @@ variable "address_space" {
 variable "resource_group_name" {}
 variable "vmsubnet_01" {}
 variable "vnet_name" {}
-variable "vmvnet_name" {}
-variable "vmsubnet_name" {}
+variable "subnet_name" {}
