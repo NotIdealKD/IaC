@@ -6,6 +6,6 @@ variable "address_space" {
   description = "Address space for the VNET"
 }
 variable "resource_group_name" {}
-variable "vmsubnet_01" {}
+variable "subnet_01" {}
 variable "vnet_name" {}
 variable "subnet_name" {}
