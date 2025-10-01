@@ -8,7 +8,7 @@ locals {
   }
 }
 
-module "rg" {
+module "vmrg" {
   source              = "../modules/resourceGroup"
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -16,13 +16,13 @@ module "rg" {
 }
 
 #
-module "vnet" {
+module "vmvnet" {
   source              = "../modules/vnet"
   location            = var.location
   resource_group_name = module.rg.resource_group_name
   address_space       = var.address_space
   vnet_name           = var.vnet_name
   subnet_name         = var.vmsubnet_name
-  subnet_01           = var.vmsubnet_01
+  subnet              = var.vmsubnet_01
   tags                = local.common_tags
 }
