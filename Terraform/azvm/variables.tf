@@ -11,7 +11,7 @@ variable "environment" {
 }
 variable "location" {
   description = "Azure zone. Defaults to UK South"
-  default = "uksouth"
+  default     = "uksouth"
 }
 
 #Resource group vars

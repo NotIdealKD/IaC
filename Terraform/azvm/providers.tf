@@ -1,11 +1,11 @@
 terraform {
   required_providers {
     azurerm = {
-        source = "hashicorp/azurerm"
-        version = ">= 4.35.0"
+      source  = "hashicorp/azurerm"
+      version = ">= 4.35.0"
     }
   }
-    # State file configuration
+  # State file configuration
   backend "azurerm" {
     resource_group_name  = "terraform-core"
     storage_account_name = "ntiterraformsa"
@@ -17,5 +17,5 @@ terraform {
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
-  use_oidc = true
+  use_oidc        = true
 }
