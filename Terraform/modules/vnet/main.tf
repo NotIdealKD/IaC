@@ -3,6 +3,7 @@ resource "azurerm_virtual_network" "vmvnet" {
   name                = var.vnet_name
   location            = var.location
   address_space       = var.address_space
+  tags = {}
 }
 
 resource "azurerm_subnet" "vmsubnet_01" {
