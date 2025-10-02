@@ -4,7 +4,7 @@ variable "location" {
 variable "resource_group_name" {
   description = "Name of the resource group to deploy to. Use Output of the rg module where possible"
 }
-variable "name" {
+variable "nicname" {
   description = "Name of the resource"
 }
 variable "accelerated_networking_enabled" {
@@ -23,4 +23,8 @@ variable "ip_configuration" {
     pip_allocation  = string
     pip_version     = string("IPv4")
   })
+}
+#VM vars
+variable "vmname" {
+  description = "Name of the VM"
 }

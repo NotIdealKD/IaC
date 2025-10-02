@@ -1,6 +1,6 @@
 resource "azurerm_network_interface" "nic" {
   location = var.location
-  name = var.name
+  name = var.nicname
   ip_configuration {
     name = var.ip_configuration.name
     private_ip_address_allocation = var.ip_configuration.pip_llocation
@@ -10,4 +10,11 @@ resource "azurerm_network_interface" "nic" {
   resource_group_name = var.resource_group_name
   accelerated_networking_enabled = true
   tags = var.tags
+}
+
+resource "azurerm_windows_virtual_machine" "vm" {
+  location = var.location
+  name    = var.diskname
+  resource_group_name = var.resource_group_name
+
 }
