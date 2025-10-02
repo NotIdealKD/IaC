@@ -4,6 +4,6 @@ variable "location" {
 }
 
 #NSG vars
-variable "subnet_name" {}
+variable "name" {}
 variable "resource_group_name" {}
 variable "tags" {}
