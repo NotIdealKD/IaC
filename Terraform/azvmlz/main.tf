@@ -26,3 +26,10 @@ module "vmvnet" {
   subnet              = var.vmsubnet_01
   tags                = local.common_tags
 }
+
+module "vmnsg" {
+  source = "../modules/nsg"
+  resource_group_name = module.vmrg.resource_group_name
+  subnet_name = module.vmvnet.subnet_name
+  tags = local.common_tags
+}
