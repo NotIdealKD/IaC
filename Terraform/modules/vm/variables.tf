@@ -4,9 +4,6 @@ variable "location" {
 variable "resource_group_name" {
   description = "Name of the resource group to deploy to. Use Output of the rg module where possible"
 }
-variable "nicname" {
-  description = "Name of the resource"
-}
 variable "accelerated_networking_enabled" {
   description = "Bool to enable accelerated networking"
   default = true
@@ -27,4 +24,8 @@ variable "ip_configuration" {
 #VM vars
 variable "vmname" {
   description = "Name of the VM"
+}
+variable "sku" {
+  description = "SKU to be used"
+  default = "Standard_B2s_v2"
 }
