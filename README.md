@@ -1,9 +1,5 @@
-# Repo for IaC learning. 
+# Repo for IaC learning
 
-I will explore the following technologies to develop my IaC skills.
+Terraform practice on Azure. Focus on best practices in terms of structuring the code and modularity. Big focus on keeping the code DRY
 
-- Terraform
-- Packer
-- Ansible
-
-Infrastructure will be hosted on Azure initially. I will investigate integration into on-prem infrastructure as well. 
+Potential to expand to GCP in the future
