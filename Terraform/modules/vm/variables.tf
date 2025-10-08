@@ -6,7 +6,7 @@ variable "resource_group_name" {
 }
 variable "accelerated_networking_enabled" {
   description = "Bool to enable accelerated networking"
-  default = true
+  default     = true
 }
 variable "tags" {
   description = "Tags to apply to the object"
@@ -14,11 +14,11 @@ variable "tags" {
 #IP Config Vars
 variable "ip_configuration" {
   description = "IP configuration settings"
-  type        = object({
-    name            = string
-    subnet_id       = string
-    pip_allocation  = string
-    pip_version     = string("IPv4")
+  type = object({
+    name           = string
+    subnet_id      = string
+    pip_allocation = string
+    pip_version    = string("IPv4")
   })
 }
 #VM vars
@@ -27,5 +27,5 @@ variable "vmname" {
 }
 variable "sku" {
   description = "SKU to be used"
-  default = "Standard_B2s_v2"
+  default     = "Standard_B2s_v2"
 }

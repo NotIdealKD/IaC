@@ -1,7 +1,7 @@
 #Location 
 variable "location" {
   description = "Azure Zone. Default to UK South"
-  default = "uksouth"
+  default     = "uksouth"
 }
 
 #Resource group vars
