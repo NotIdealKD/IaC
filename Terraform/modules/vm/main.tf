@@ -23,11 +23,10 @@ resource "azurerm_windows_virtual_machine" "vm" {
     name                 = "${var.vmname}-osdisk"
   }
   source_image_reference {
-    publisher = var.image_publisher
-    offer     = var.image_offer
-    sku       = var.image_sku
-    version   = var.image_version
-
+    publisher = lookup(var.source_image_reference, "publisher", "")
+    offer     = lookup(var.source_image_reference, "offer", "")
+    sku       = lookup(var.source_image_reference, "offer", "")
+    version   = lookup(var.source_image_reference, "version", "latest")
   }
   network_interface_ids = [azurerm_network_interface.nic.id]
   tags                  = var.tags

@@ -44,15 +44,17 @@ variable "secure_boot_enabled" {
   default = false
 }
 #Image variables
-variable "image_publisher" {
-  description = "Publisher e.g. MicrosoftWindowsServer"
+variable "source_image_reference" {
+  type = object({
+    publisher = string
+    offer = string
+    sku = string
+    version = string
+  })
 }
-variable "image_offer" {
-  description = "Offer e.g. WindowsServer"
-}
-variable "image_sku" {
-  description = "SKU to use e.g. 2025-datacenter or 2025-datacenter-azure-edition"
-}
-variable "image_version" {
-  description = "Version of the image to use. Accepts 'latest'"
+
+variable "tags" {
+  description = "Tags to apply to resource"
+  type        = map(string)
+  default     = {}
 }
