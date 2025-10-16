@@ -1,6 +1,6 @@
 resource "azurerm_network_interface" "nic" {
   location = var.location
-  name     = "${var.vmname}-NIC"
+  name     = "${var.vmname}-nic"
   ip_configuration {
     name                          = var.ip_configuration.name
     private_ip_address_allocation = var.ip_configuration.pip_llocation
@@ -18,17 +18,18 @@ resource "azurerm_windows_virtual_machine" "vm" {
   resource_group_name = var.resource_group_name
   size                = var.sku
   os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    caching              = var.os_disk_caching
+    storage_account_type = var.os_disk_storage_account_type
     name                 = "${var.vmname}-osdisk"
   }
   source_image_reference {
-    publisher = ""
-    offer     = ""
-    sku       = ""
-    version   = ""
+    publisher = var.image_publisher
+    offer     = var.image_offer
+    sku       = var.image_sku
+    version   = var.image_version
 
   }
   network_interface_ids = [azurerm_network_interface.nic.id]
   tags                  = var.tags
+  secure_boot_enabled = var.secure_boot_enabled
 }
