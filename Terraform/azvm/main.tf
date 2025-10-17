@@ -29,7 +29,7 @@ module "win_vm" {
   source = "../modules/vm"
   location = "uksouth"
   resource_group_name = var.resource_group_name
-  vmname = var.vm_name_prefix
+  vmname = local.vm_name
   ip_configuration = var.ip_configuration
   source_image_reference = local.source_image_reference
   admin_username = "${local.vm_name}-la"
