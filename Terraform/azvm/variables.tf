@@ -14,9 +14,10 @@ variable "resource_group_name" {
 variable "subscription_id" {
 }
 
-variable "vmname" {
-  description = "Name of our VM"
+variable "vm_name_prefix" {
+  description = "VM name prefix"
   type = string
+  default = "WIN"
 }
 
 variable "ip_configuration" {
