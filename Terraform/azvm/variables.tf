@@ -15,16 +15,3 @@ variable "vmname" {
   description = "Name of our VM"
   type = string
 }
-
-variable "" {
-  
-}
-
-variable "source_image_reference" {
-  type = object({
-    publisher = string
-    offer = string
-    sku = string
-    version = string
-  })
-}

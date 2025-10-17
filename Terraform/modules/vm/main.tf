@@ -26,9 +26,9 @@ resource "azurerm_windows_virtual_machine" "vm" {
     publisher = lookup(var.source_image_reference, "publisher", "")
     offer     = lookup(var.source_image_reference, "offer", "")
     sku       = lookup(var.source_image_reference, "offer", "")
-    version   = lookup(var.source_image_reference, "version", "latest")
+    version   = lookup(var.source_image_reference, "version", "")
   }
-  network_interface_ids = [azurerm_network_interface.nic.id]
+  network_interface_ids = [var.nic.id]
   tags                  = var.tags
   secure_boot_enabled = var.secure_boot_enabled
 }

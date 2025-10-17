@@ -4,12 +4,14 @@ variable "location" {
 variable "resource_group_name" {
   description = "Name of the resource group to deploy to. Use Output of the rg module where possible"
 }
+variable "tags" {
+  description = "Tags to apply to resource"
+  type        = map(string)
+  default     = {}
+}
 variable "accelerated_networking_enabled" {
   description = "Bool to enable accelerated networking"
   default     = true
-}
-variable "tags" {
-  description = "Tags to apply to the object"
 }
 #IP Config Vars
 variable "ip_configuration" {
@@ -18,7 +20,7 @@ variable "ip_configuration" {
     name           = string
     subnet_id      = string
     pip_allocation = string
-    pip_version    = string("IPv4")
+    pip_version    = string
   })
 }
 #VM vars
@@ -43,18 +45,19 @@ variable "secure_boot_enabled" {
   type = bool
   default = false
 }
-#Image variables
-variable "source_image_reference" {
-  type = object({
-    publisher = string
-    offer = string
-    sku = string
-    version = string
-  })
+variable "nic_id" {
+  type = list(string)
 }
+#Image variables
+#variable "source_image_reference" {
+#  type = object({
+#    publisher = string
+#    offer = string
+#    sku = string
+#    version = string
+#  })
+#}
 
-variable "tags" {
-  description = "Tags to apply to resource"
-  type        = map(string)
-  default     = {}
+variable "source_image_reference" {
+  type = map(string)
 }
