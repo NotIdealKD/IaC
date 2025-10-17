@@ -27,12 +27,18 @@ variable "ip_configuration" {
 variable "vmname" {
   description = "Name of the VM"
 }
+variable "nic_name" {
+  description = "Name of the NIC"
+}
+variable "os_disk_name" {
+  description = "Name of the OS Disk"
+}
 variable "sku" {
   description = "SKU to be used"
   default     = "Standard_B2s_v2"
 }
 variable "os_disk_storage_account_type" {
-  description = "The Type of Storage Account which should back this the Internal OS Disk. Possible values are Standard_LRS, StandardSSD_LRS, Premium_LRS, StandardSSD_ZRS and Premium_ZRS. Changing this forces a new resource to be created."
+  description = "The Type of Storage Account which should back this the Internal OS Disk. Possible values are Standard_LRS, StandardSSD_LRS, Premium_LRS, StandardSSD_ZRS and Premium_ZRS. Changing this forces a new resource to be created"
   default = "Standard_LRS"
 }
 variable "os_disk_caching" {
