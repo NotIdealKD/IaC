@@ -11,7 +11,20 @@ variable "resource_group_name" {
   type = string
 }
 
+variable "subscription_id" {
+}
+
 variable "vmname" {
   description = "Name of our VM"
   type = string
+}
+
+variable "ip_configuration" {
+  description = "IP configuration settings"
+  type = object({
+    name           = string
+    subnet_id      = string
+    pip_allocation = string
+    pip_version    = string
+  })
 }

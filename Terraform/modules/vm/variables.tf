@@ -45,9 +45,6 @@ variable "secure_boot_enabled" {
   type = bool
   default = false
 }
-variable "nic_id" {
-  type = list(string)
-}
 #Image variables
 #variable "source_image_reference" {
 #  type = object({
@@ -60,4 +57,14 @@ variable "nic_id" {
 
 variable "source_image_reference" {
   type = map(string)
+}
+#Local admin vars
+variable "admin_username" {
+  description = "Local admin username"
+  type = string
+}
+variable "admin_password" {
+  description = "Local admin account password"
+  type = string
+  sensitive = true
 }
