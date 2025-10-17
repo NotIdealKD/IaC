@@ -4,6 +4,7 @@
 # Terraform state files (can contain secrets)
 *.tfstate
 *.tfstate.*
+*.tfplan
 
 # Crash log (useful locally, not in repo)
 crash.log
