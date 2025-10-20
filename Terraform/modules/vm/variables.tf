@@ -39,17 +39,17 @@ variable "sku" {
 }
 variable "os_disk_storage_account_type" {
   description = "The Type of Storage Account which should back this the Internal OS Disk. Possible values are Standard_LRS, StandardSSD_LRS, Premium_LRS, StandardSSD_ZRS and Premium_ZRS. Changing this forces a new resource to be created"
-  default = "Standard_LRS"
+  default     = "Standard_LRS"
 }
 variable "os_disk_caching" {
   description = "Disk caching type"
-  default = "ReadWrite"
-  type = string
+  default     = "ReadWrite"
+  type        = string
 }
 variable "secure_boot_enabled" {
   description = "Enable secure boot"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 #Image variables
 #variable "source_image_reference" {
@@ -67,10 +67,10 @@ variable "source_image_reference" {
 #Local admin vars
 variable "admin_username" {
   description = "Local admin username"
-  type = string
+  type        = string
 }
 variable "admin_password" {
   description = "Local admin account password"
-  type = string
-  sensitive = true
+  type        = string
+  sensitive   = true
 }

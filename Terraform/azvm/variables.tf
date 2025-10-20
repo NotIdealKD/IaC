@@ -8,7 +8,7 @@ variable "environment" {
 
 variable "resource_group_name" {
   description = "Resource Group we're deploying to"
-  type = string
+  type        = string
 }
 
 variable "subscription_id" {
@@ -16,8 +16,8 @@ variable "subscription_id" {
 
 variable "vm_name_prefix" {
   description = "VM name prefix"
-  type = string
-  default = "WIN"
+  type        = string
+  default     = "WIN"
 }
 
 variable "ip_configuration" {

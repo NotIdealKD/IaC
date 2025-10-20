@@ -28,7 +28,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
     sku       = lookup(var.source_image_reference, "sku", "")
     version   = lookup(var.source_image_reference, "version", "")
   }
-  patch_mode = "AutomaticByPlatform"
+  patch_mode            = "AutomaticByPlatform"
   network_interface_ids = [azurerm_network_interface.nic.id]
   tags                  = var.tags
   secure_boot_enabled   = var.secure_boot_enabled
