@@ -36,4 +36,5 @@ module "win_vm" {
   admin_password         = random_password.local_admin_pw.result
   os_disk_name           = "${local.vm_name}-OS"
   nic_name               = "${local.vm_name}-NIC"
+  tags                   = local.common_tags
 }

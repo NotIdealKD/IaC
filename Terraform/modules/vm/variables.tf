@@ -51,16 +51,6 @@ variable "secure_boot_enabled" {
   type        = bool
   default     = false
 }
-#Image variables
-#variable "source_image_reference" {
-#  type = object({
-#    publisher = string
-#    offer = string
-#    sku = string
-#    version = string
-#  })
-#}
-
 variable "source_image_reference" {
   type = map(string)
 }
