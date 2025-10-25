@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Defining default params 
+#Defining default params w
 environment="dev"
 os_type="win"
 
