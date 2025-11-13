@@ -24,9 +24,8 @@ variable "address_space" {
   type        = set(string)
   description = "Address space for the VNET"
 }
-variable "vmsubnet_01" {}
 variable "vnet_name" {}
-variable "vmsubnet_name" {}
 
-#NSG vars
-variable "vmsubnet_01_name" {}
+#Subnet vars
+variable "vmsubnet_name" {}
+variable "vmsubnet_01" {}
