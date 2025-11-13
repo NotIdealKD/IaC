@@ -7,7 +7,3 @@ locals {
   ])
   name = lower(join("-", local.elements))
 }
-
-output "resource_name" {
-  value = local.name
-}
