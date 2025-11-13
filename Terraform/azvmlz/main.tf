@@ -25,11 +25,11 @@ module "vmvnet" {
 }
 
 module "subnet" {
-  source = "../modules/subnet"
+  source              = "../modules/subnet"
   resource_group_name = module.vmrg.resource_group_name
-  vnet_name = module.vmvnet.vnet_name
-  subnet_name = var.vmsubnet_name
-  subnet = var.vmsubnet_01
+  vnet_name           = module.vmvnet.vnet_name
+  subnet_name         = var.vmsubnet_name
+  subnet              = var.vmsubnet_01
 }
 
 module "vmnsg" {
