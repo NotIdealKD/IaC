@@ -6,7 +6,7 @@ locals {
     source       = "Terraform"
   }
 
-  image_doc = yamldecode(file("../../image/definitions/windows_server_2025.yml"))
+  image_doc = yamldecode(file("../../image/definitions/windows_server_2025.yaml"))
 
   source_image_reference = { for v in local.image_doc.variables : v.name => v.value }
 
