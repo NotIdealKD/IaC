@@ -35,11 +35,11 @@ module "subnet" {
 module "vmnsg" {
   source              = "../modules/nsg"
   resource_group_name = module.vmrg.resource_group_name
-  name                = "${module.vmvnet.subnet_name}-nsg"
+  name                = "${module.subnet.subnet_name}-nsg"
   tags                = local.common_tags
 }
 
 resource "azurerm_subnet_network_security_group_association" "subnet01assoc" {
   network_security_group_id = module.vmnsg.nsg_id
-  subnet_id                 = module.vmvnet.subnet_id
+  subnet_id                 = module.subnet.subnet_id
 }
