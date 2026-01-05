@@ -1,3 +1,8 @@
+data "azurerm_resources" "existing_vms" {
+  type =                "Microsoft.Compute/virtualMachines"
+  resource_group_name = var.resource_group_name
+}
+
 locals {
   common_tags = {
     environment  = var.environment
@@ -10,6 +15,8 @@ locals {
 
   source_image_reference = { for v in local.image_doc.variables : v.name => v.value }
 
+  vm_count = data.azurerm_resources.existing_vms.id
+  
   vm_name = module.naming.resource_name
 }
 
