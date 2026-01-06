@@ -1,8 +1,3 @@
-data "azurerm_resources" "existing_vms" {
-  type =                "Microsoft.Compute/virtualMachines"
-  resource_group_name = var.resource_group_name
-}
-
 locals {
   common_tags = {
     environment  = var.environment
@@ -14,8 +9,6 @@ locals {
   image_doc = yamldecode(file("../../image/definitions/windows_server_2025.yaml"))
 
   source_image_reference = { for v in local.image_doc.variables : v.name => v.value }
-
-  vm_count = data.azurerm_resources.existing_vms.id
   
   vm_name = module.naming.resource_name
 }
@@ -42,7 +35,7 @@ module "win_vm" {
   source_image_reference = local.source_image_reference
   admin_username         = "${local.vm_name}-la"
   admin_password         = random_password.local_admin_pw.result
-  os_disk_name           = "${local.vm_name}-OS"
-  nic_name               = "${local.vm_name}-NIC"
+  os_disk_name           = "${local.vm_name}-os"
+  nic_name               = "${local.vm_name}-nic"
   tags                   = local.common_tags
 }

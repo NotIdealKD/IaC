@@ -1,9 +1,14 @@
+resource "random_string" "name_suffix" {
+  length = 6
+  special = false
+}
+
 locals {
   elements = compact([
     var.prefix,
     var.resource_type,
     var.resource_role != null ? var.resource_role : null,
-    substr(md5("${var.prefix}-${var.resource_role}"), 0, 4)
+    random_string.name_suffix.result
   ])
   name = lower(join("-", local.elements))
 }
