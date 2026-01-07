@@ -9,8 +9,8 @@ locals {
   image_doc = yamldecode(file("../../image/definitions/windows_server_2025.yaml"))
 
   source_image_reference = { for v in local.image_doc.variables : v.name => v.value }
-
-  vm_name = "${upper(var.environment)}-${var.vm_name_prefix}-${random_string.vm_suffix.result}"
+  
+  vm_name = module.name.resource_name
 }
 
 resource "random_password" "local_admin_pw" {
@@ -19,10 +19,11 @@ resource "random_password" "local_admin_pw" {
   min_special = 4
 }
 
-resource "random_string" "vm_suffix" {
-  length  = 6
-  lower   = false
-  special = false
+module "name" {
+  source = "../modules/resourceNaming"
+  prefix = var.environment
+  resource_type = "vm"
+  resource_role = var.resource_role
 }
 
 module "win_vm" {
@@ -34,7 +35,7 @@ module "win_vm" {
   source_image_reference = local.source_image_reference
   admin_username         = "${local.vm_name}-la"
   admin_password         = random_password.local_admin_pw.result
-  os_disk_name           = "${local.vm_name}-OS"
-  nic_name               = "${local.vm_name}-NIC"
+  os_disk_name           = "${local.vm_name}-os"
+  nic_name               = "${local.vm_name}-nic"
   tags                   = local.common_tags
 }

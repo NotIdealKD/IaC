@@ -14,10 +14,10 @@ variable "resource_group_name" {
 variable "subscription_id" {
 }
 
-variable "vm_name_prefix" {
-  description = "VM name prefix"
+variable "resource_role" {
+  description = "Resource Role"
   type        = string
-  default     = "WIN"
+  nullable    = true
 }
 
 variable "ip_configuration" {
