@@ -10,7 +10,7 @@ locals {
 
   source_image_reference = { for v in local.image_doc.variables : v.name => v.value }
   
-  vm_name = module.naming.resource_name
+  vm_name = module.name.resource_name
 }
 
 resource "random_password" "local_admin_pw" {
@@ -19,7 +19,7 @@ resource "random_password" "local_admin_pw" {
   min_special = 4
 }
 
-module "naming" {
+module "name" {
   source = "../modules/resourceNaming"
   prefix = var.environment
   resource_type = "vm"
