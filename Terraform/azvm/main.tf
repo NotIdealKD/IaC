@@ -20,7 +20,7 @@ resource "random_password" "local_admin_pw" {
 }
 
 module "naming" {
-  source = "../modules/naming"
+  source = "../modules/resourceNaming"
   prefix = var.environment
   resource_type = "vm"
   resource_role = var.resource_role
