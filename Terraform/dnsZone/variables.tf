@@ -2,13 +2,6 @@
 variable "subscription_id" {
   description = "Sub id to deploy to"
 }
-variable "environment" {
-  description = "Environment"
-  validation {
-    condition     = contains(["dev", "test", "prod"], var.environment)
-    error_message = "Environment must be one of: dev, test, prod."
-  }
-}
 
 #Resource group vars
 variable "resource_group_name" {
