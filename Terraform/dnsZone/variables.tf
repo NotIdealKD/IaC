@@ -4,15 +4,11 @@ variable "subscription_id" {
   description = "Sub id to deploy to"
 }
 
-#Resource group vars
-variable "resource_group_name" {
-  type        = string
-  description = "Name of the resource group"
-}
-
-variable "dns_zone_name" {
-  type        = string
-  description = "DNS Zone name"
+variable "dns_zones" {
+  type = map(object({
+    resource_group_name = string
+  }))
+  description = "DNS Zones"
 }
 
 variable "tags" {
