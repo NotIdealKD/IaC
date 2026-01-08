@@ -15,6 +15,6 @@ variable "resource_group_name" {
   description = "Resource Group the NSG will reside in"
 }
 variable "tags" {
-  type = map()
+  type = map(string)
   description = "Tags for the resource"
 }
