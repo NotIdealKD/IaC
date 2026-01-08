@@ -5,3 +5,10 @@ module "public_dns_zones" {
   dns_zone_name       = each.key
   tags                = var.tags
 }
+
+module "public_dns_records" {
+  source = "../modules/publicDnsZoneRecords"
+  for_each = var.dns_zones
+  parent_id = "/subscriptions/${data.azurerm_subscription.primary.subscription_id}/resourceGroups/${each.value.resource_group_name}/providers/Microsoft.Network/dnsZones/${each.value.zone_name}"
+  records = jsondecode()
+}

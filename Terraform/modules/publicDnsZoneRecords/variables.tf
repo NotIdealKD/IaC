@@ -8,3 +8,8 @@ variable "records" {
     values              = list(string)
   }))
 }
+
+variable "parent_id" {
+  type = string
+  description = "Azure DNS zone ID"
+}
