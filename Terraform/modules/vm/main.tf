@@ -8,7 +8,7 @@ resource "azurerm_network_interface" "nic" {
     subnet_id                     = lookup(var.ip_configuration, "subnet_id", "")
   }
   resource_group_name            = var.resource_group_name
-  accelerated_networking_enabled = true
+  accelerated_networking_enabled = var.accelerated_networking_enabled
   tags                           = var.tags
 }
 

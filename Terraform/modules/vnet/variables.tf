@@ -1,7 +1,7 @@
 #Location 
 variable "location" {
-  type = string
-  default = "uksouth"
+  type        = string
+  default     = "uksouth"
   description = "Azure zone to deploy to"
 }
 #VNET vars
@@ -10,11 +10,11 @@ variable "address_space" {
   description = "Address space for the VNET"
 }
 variable "resource_group_name" {
-  type = string
+  type        = string
   description = "Resource group name"
 }
 variable "vnet_name" {
-  type = string
+  type        = string
   description = "Name of the VNET"
 }
 variable "tags" {

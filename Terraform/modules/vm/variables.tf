@@ -1,10 +1,10 @@
 variable "location" {
-  type = string
-  default = "UK South"
+  type        = string
+  default     = "UK South"
   description = "Azure zone to deploy to"
 }
 variable "resource_group_name" {
-  type = string
+  type        = string
   description = "Name of the resource group to deploy to. Use Output of the rg module where possible"
 }
 variable "tags" {
@@ -13,6 +13,7 @@ variable "tags" {
   default     = {}
 }
 variable "accelerated_networking_enabled" {
+  type        = bool
   description = "Bool to enable accelerated networking"
   default     = true
 }
@@ -28,19 +29,24 @@ variable "ip_configuration" {
 }
 #VM vars
 variable "vmname" {
+  type        = string
   description = "Name of the VM"
 }
 variable "nic_name" {
+  type        = string
   description = "Name of the NIC"
 }
 variable "os_disk_name" {
+  type        = string
   description = "Name of the OS Disk"
 }
 variable "sku" {
+  type        = string
   description = "SKU to be used"
   default     = "Standard_B2s_v2"
 }
 variable "os_disk_storage_account_type" {
+  type        = string
   description = "The Type of Storage Account which should back this the Internal OS Disk. Possible values are Standard_LRS, StandardSSD_LRS, Premium_LRS, StandardSSD_ZRS and Premium_ZRS. Changing this forces a new resource to be created"
   default     = "Standard_LRS"
 }
@@ -55,7 +61,8 @@ variable "secure_boot_enabled" {
   default     = false
 }
 variable "source_image_reference" {
-  type = map(string)
+  type        = map(string)
+  description = "Details of the image to be used. Image details are stored in YML files and imported into the root module"
 }
 #Local admin vars
 variable "admin_username" {
