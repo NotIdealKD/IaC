@@ -12,6 +12,8 @@ variable "resource_group_name" {
 }
 
 variable "subscription_id" {
+  type        = string
+  description = "Subscription ID"
 }
 
 variable "resource_role" {

@@ -1,7 +1,10 @@
 variable "location" {
+  type = string
+  default = "UK South"
   description = "Azure zone to deploy to"
 }
 variable "resource_group_name" {
+  type = string
   description = "Name of the resource group to deploy to. Use Output of the rg module where possible"
 }
 variable "tags" {

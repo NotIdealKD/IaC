@@ -1,10 +1,12 @@
 #Global vars
 variable "subscription_id" {
+  type = string
   description = "Sub id to deploy to"
 }
 
 #Resource group vars
 variable "resource_group_name" {
+  type = string
   description = "Name of the resource group"
 }
 
