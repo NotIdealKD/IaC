@@ -9,7 +9,7 @@ locals {
   image_doc = yamldecode(file("../../image/definitions/windows_server_2025.yaml"))
 
   source_image_reference = { for v in local.image_doc.variables : v.name => v.value }
-  
+
   vm_name = module.name.resource_name
 }
 
@@ -20,8 +20,8 @@ resource "random_password" "local_admin_pw" {
 }
 
 module "name" {
-  source = "../modules/resourceNaming"
-  prefix = var.environment
+  source        = "../modules/resourceNaming"
+  prefix        = var.environment
   resource_type = "vm"
   resource_role = var.resource_role
 }

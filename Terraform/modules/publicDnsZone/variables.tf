@@ -4,7 +4,7 @@ variable "resource_group_name" {
 }
 
 variable "dns_zone_name" {
-  type = string
+  type        = string
   description = "DNS Zone name"
 }
 
