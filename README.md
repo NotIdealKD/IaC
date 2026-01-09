@@ -4,7 +4,8 @@ Terraform practice on Azure. Azure was chosen as the Cloud Provider of choice du
 
 Focus on best practices in terms of structuring the code and modularity. Focus on modularity and keeping the code DRY to be inline with industry best practices.
 
-## Work in progress
-- VM provisioning with individual state per VM (relevant to work)
+## WIP
+- Azure DNS Zone management module (zone and records)
+
+## Planned
 - CI/CD implementation (GHA)
-- VM Name generation script (bash)
