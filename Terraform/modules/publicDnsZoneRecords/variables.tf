@@ -10,6 +10,6 @@ variable "records" {
 }
 
 variable "parent_id" {
-  type = string
+  type        = string
   description = "Azure DNS zone ID"
 }
