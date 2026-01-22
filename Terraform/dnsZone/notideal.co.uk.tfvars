@@ -3,10 +3,6 @@ dns_zones = {
   "notideal.co.uk" = {
     resource_group_name = "dns"
   },
-
-  "testnotideal.co.uk" = {
-    resource_group_name = "dns"
-  }
 }
 
 dns_records = {

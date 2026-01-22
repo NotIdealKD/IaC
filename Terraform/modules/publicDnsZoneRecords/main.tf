@@ -1,7 +1,7 @@
 resource "azapi_resource" "dns_record" {
   for_each  = var.records
   type      = "Microsoft.Network/dnsZones/${each.value.type}@2018-05-01"
-  parent_id = var.parent_id
+  parent_id = "/subscriptions/${var.subscription_id}/resourceGroups/${each.value.resource_group_name}/providers/Microsoft.Network/dnsZones/${each.value.zone_name}"
   name      = each.key
   body = {
     properties = merge(
