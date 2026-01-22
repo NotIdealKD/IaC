@@ -1,2 +1,3 @@
-# Refactor code to handle it's shit better with dns zones for record block
-- The dns records block loops around var.dns_records which makes it attemot to a DNS record per each record declared i.e an A record for the A record block and for the NS record block and so on
+# Fix the naming of each record 
+Each record is named after it's key which is stupid in hindsight. I need to define the name as a variable
+Name = record prefix (@,www....)

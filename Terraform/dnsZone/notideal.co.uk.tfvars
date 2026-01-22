@@ -3,6 +3,10 @@ dns_zones = {
   "notideal.co.uk" = {
     resource_group_name = "dns"
   },
+
+  "testnotideal.co.uk" = {
+    resource_group_name = "dns"
+  }
 }
 
 dns_records = {
@@ -18,7 +22,7 @@ dns_records = {
     zone_name = "notideal.co.uk"
     resource_group_name = "dns"
     type = "NS"
-    ttl = 3600
+    ttl = 172800
     values = [
       "ns1-02.azure-dns.com.",
       "ns2-02.azure-dns.net.",
@@ -27,3 +31,5 @@ dns_records = {
     ]
   }
 }
+
+terraform import -var-file "notideal.co.uk.tfvars" 'module.public_dns_records.azapi_resource.dns_record["notideal.co.uk-A"]' "/subscriptions/4d5d3655-8274-4f6a-95c8-6c295432f8fa/resourceGroups/dns/providers/Microsoft.Network/dnsZones/notideal.co.uk/A/@"
