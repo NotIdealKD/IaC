@@ -3,9 +3,15 @@ variable "records" {
   type = map(object({
     zone_name           = string
     resource_group_name = string
+    prefix              = string
     type                = string
     ttl                 = optional(number)
-    values              = list(string)
+    values              = optional(list(string))
+    mx_values           = optional(list(object
+    ({
+      preference = number
+      address    = string
+    })))
   }))
 }
 

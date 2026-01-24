@@ -1,3 +1,2 @@
-# Fix the naming of each record 
-Each record is named after it's key which is stupid in hindsight. I need to define the name as a variable
-Name = record prefix (@,www....)
+# Fix MX record
+Currently values for MX record ends up an object. It needs to be a string. 
