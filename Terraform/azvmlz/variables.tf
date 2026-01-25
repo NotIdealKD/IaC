@@ -1,8 +1,10 @@
 #Global vars
 variable "subscription_id" {
+  type        = string
   description = "Sub id to deploy to"
 }
 variable "environment" {
+  type        = string
   description = "Environment"
   validation {
     condition     = contains(["dev", "test", "prod"], var.environment)
@@ -10,12 +12,14 @@ variable "environment" {
   }
 }
 variable "location" {
+  type        = string
   description = "Azure zone. Defaults to UK South"
   default     = "uksouth"
 }
 
 #Resource group vars
 variable "resource_group_name" {
+  type    = string
   default = "Desired name of the resource group for our VM"
 }
 
@@ -24,8 +28,17 @@ variable "address_space" {
   type        = set(string)
   description = "Address space for the VNET"
 }
-variable "vnet_name" {}
+variable "vnet_name" {
+  type        = string
+  description = "Name of the VNET"
+}
 
 #Subnet vars
-variable "vmsubnet_name" {}
-variable "vmsubnet_01" {}
+variable "vmsubnet_name" {
+  type        = string
+  description = "Name of the subnet"
+}
+variable "vmsubnet_01" {
+  type        = tuple([string])
+  description = "Subnet CIDR range"
+}

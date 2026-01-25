@@ -1,14 +1,12 @@
-#Location 
-variable "location" {
-  type        = string
-  description = "Azure Zone. Default to UK South"
-  default     = "uksouth"
-}
-
 #Resource group vars
 variable "resource_group_name" {
   type        = string
   description = "Name of the resource group"
+}
+
+variable "dns_zone_name" {
+  type        = string
+  description = "DNS Zone name"
 }
 
 variable "tags" {

@@ -4,7 +4,7 @@ terraform {
     resource_group_name  = "terraform-core"
     storage_account_name = "ntiterraformsa"
     container_name       = "tfstate"
-    key                  = "azvmwindows_VMs.tfstate"
+    key                  = "azvmwindows.tfstate"
     use_oidc             = true
   }
 }

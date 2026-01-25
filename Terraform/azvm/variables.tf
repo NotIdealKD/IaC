@@ -1,4 +1,5 @@
 variable "environment" {
+  type        = string
   description = "Environment"
   validation {
     condition     = contains(["dev", "test", "prod"], var.environment)
@@ -12,6 +13,8 @@ variable "resource_group_name" {
 }
 
 variable "subscription_id" {
+  type        = string
+  description = "Subscription ID"
 }
 
 variable "resource_role" {
