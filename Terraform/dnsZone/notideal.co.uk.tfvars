@@ -16,12 +16,12 @@ dns_records = {
     values              = ["51.104.28.83"]
   },
   "www.notideal.co.uk-A" = {
-    zone_name = "notideal.co.uk"
+    zone_name           = "notideal.co.uk"
     resource_group_name = "dns"
-    prefix = "www"
-    type = "A"
-    ttl = 3600
-    values = ["51.104.28.83"]
+    prefix              = "www"
+    type                = "A"
+    ttl                 = 3600
+    values              = ["51.104.28.83"]
   }
 
   #NS Records
