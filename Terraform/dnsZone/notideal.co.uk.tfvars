@@ -6,6 +6,7 @@ dns_zones = {
 }
 
 dns_records = {
+  # A Records
   "notideal.co.uk-A" = {
     zone_name           = "notideal.co.uk"
     resource_group_name = "dns"
@@ -14,7 +15,16 @@ dns_records = {
     ttl                 = 3600
     values              = ["51.104.28.83"]
   },
+  "www.notideal.co.uk-A" = {
+    zone_name = "notideal.co.uk"
+    resource_group_name = "dns"
+    prefix = "www"
+    type = "A"
+    ttl = 3600
+    values = ["51.104.28.83"]
+  }
 
+  #NS Records
   "notideal.co.uk-NS" = {
     zone_name           = "notideal.co.uk"
     resource_group_name = "dns"
@@ -29,6 +39,7 @@ dns_records = {
     ]
   },
 
+  #TXT Records
   "notideal.co.uk-TXT@" = {
     zone_name           = "notideal.co.uk"
     resource_group_name = "dns"
@@ -41,6 +52,7 @@ dns_records = {
     ]
   },
 
+  #MX Records
   "notideal.co.uk-MX" = {
     zone_name           = "notideal.co.uk"
     resource_group_name = "dns"

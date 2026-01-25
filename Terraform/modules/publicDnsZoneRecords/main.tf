@@ -8,15 +8,14 @@ resource "azapi_resource" "dns_record" {
       {
         TTL = each.value.ttl
       },
-      lookup({
-        "A"      = { ARecords      = [for ip in each.value.values : { ipv4Address = ip }] },
-        "AAAA"   = { AAAARecords   = [for ip in each.value.values : { ipv6Address = ip }] },
-        "CNAME"  = { CNAMERecord   = { cname = each.value.values[0] } },
-        "TXT"    = { TXTRecords    = [for t in each.value.values : { value = [t] }] },
-        "MX"     = { MXRecords     = [for m in each.value.mx_values : { preference = m.preference, exchange = m.address }] },
-        "SRV"    = { SRVRecords    = [for s in each.value.values : { priority=10, weight=10, port=80, target=s }] },
-        "NS"     = { NSRecords     = [for n in each.value.values : { nsdname = n } ]}
-      }, each.value.type, {})
+      
+      each.value.type == "A" ? { ARecords = [for ip in each.value.values : { ipv4Address = ip }] } : null,
+      each.value.type == "AAAA" ? { AAAARecords = [for ip in each.value.values : { ipv6Address = ip }] } : null,
+      each.value.type == "CNAME" ?  { CNAMERecord = { cname = each.value.values[0] } } : null,
+      each.value.type == "TXT" ? { TXTRecords = [for t in each.value.values : { value = [t] }] } : null,
+      each.value.type == "MX" ? { MXRecords = [for m in each.value.mx_values : { preference = m.preference, exchange = m.address }] } : null,
+      each.value.type == "SRV" ?  { SRVRecords = [for s in each.value.values : { priority = 10, weight = 10, port = 80, target = s }] } : null,
+      each.value.type == "NS" ? { NSRecords = [for n in each.value.values : { nsdname = n }] } : null
     )
   }
 }

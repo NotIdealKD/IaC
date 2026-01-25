@@ -7,10 +7,10 @@ variable "records" {
     type                = string
     ttl                 = optional(number)
     values              = optional(list(string))
-    mx_values           = optional(list(object
-    ({
-      preference = number
-      address    = string
+    mx_values = optional(list(object
+      ({
+        preference = number
+        address    = string
     })))
   }))
 }
@@ -21,7 +21,7 @@ variable "parent_id" {
 }
 
 variable "subscription_id" {
-  type = string
-  nullable = true
+  type        = string
+  nullable    = true
   description = "Sub ID for the parent_id variable"
 }
