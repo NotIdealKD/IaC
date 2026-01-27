@@ -9,6 +9,5 @@ module "public_dns_zones" {
 module "public_dns_records" {
   source          = "../modules/publicDnsZoneRecords"
   subscription_id = var.subscription_id
-  parent_id       = null
   records         = var.dns_records
 }
