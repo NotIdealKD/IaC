@@ -1,9 +1,8 @@
 {
     "recommendations": [
-        "rogalmic.bash-debug",
-        "mads-hartmann.bash-ide-vscode",
         "hashicorp.hcl",
         "hashicorp.terraform",
-        "ms-azuretools.vscode-azureterraform"
+        "ms-azuretools.vscode-azureterraform",
+        "github.vscode-github-actions"
     ]
 }

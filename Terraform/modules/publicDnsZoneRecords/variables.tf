@@ -15,11 +15,6 @@ variable "records" {
   }))
 }
 
-variable "parent_id" {
-  type        = string
-  description = "Azure DNS zone ID"
-}
-
 variable "subscription_id" {
   type        = string
   nullable    = true
