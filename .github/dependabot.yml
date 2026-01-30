@@ -4,12 +4,4 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
-updates:
-  - package-ecosystem: "terraform" # See documentation for possible values
-    directories: 
-      - "/terraform/azvm"
-      - "/terraform/azvmlz"
-      - "/terraform/dnsZone"
-    schedule:
-      interval: weekly
-    
+updates: [] # Disabling dependabot as it doesn't support terraform 1.14.x. It's currently pinned to 1.13.3
