@@ -9,7 +9,7 @@ updates:
     directories: 
       - "/terraform/azvm"
       - "/terraform/azvmlz"
-      - "terraform/dnsZone"
+      - "/terraform/dnsZone"
     schedule:
       interval: weekly
     
