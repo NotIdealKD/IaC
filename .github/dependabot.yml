@@ -6,6 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/terraform/azvm" # Location of package manifests
+    directories: 
+      - "/terraform/azvm"
+      - "/terraform/azvmlz"
+      - "terraform/dnsZone"
     schedule:
       interval: weekly
+    
